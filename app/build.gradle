@@ -8,6 +8,11 @@ plugins {
 }
 
 android {
+    lintOptions {
+        checkReleaseBuilds false
+        //If you want to continue even if errors found use following line
+        abortOnError false
+    }
     namespace 'net.devemperor.wristassist'
     compileSdk 34
 
