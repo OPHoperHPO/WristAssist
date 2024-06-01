@@ -33,8 +33,8 @@ jobs:
     - name: Sign APK
       run: |
         wget https://dl.google.com/android/repository/build-tools_r29.0.2-linux.zip -O /tmp/build-tools.zip
-        unzip /tmp/build-tools.zip -d /usr/local/android-sdk/
-        /usr/local/android-sdk/build-tools/29.0.2/apksigner sign --ks /home/runner/work/WristAssist/WristAssist/app/my-release-key.jks --ks-key-alias my-key-alias --ks-pass pass:mypassword --key-pass pass:mypassword --out /home/runner/work/WristAssist/WristAssist/app/build/outputs/apk/release/app-release-signed.apk /home/runner/work/WristAssist/WristAssist/app/build/outputs/apk/release/app-release-unsigned.apk
+        unzip /tmp/build-tools.zip -d /tmp/build-tools/
+        /tmp/build-tools/build-tools/29.0.2/apksigner sign --ks /home/runner/work/WristAssist/WristAssist/app/my-release-key.jks --ks-key-alias my-key-alias --ks-pass pass:mypassword --key-pass pass:mypassword --out /home/runner/work/WristAssist/WristAssist/app/build/outputs/apk/release/app-release-signed.apk /home/runner/work/WristAssist/WristAssist/app/build/outputs/apk/release/app-release-unsigned.apk
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.3
