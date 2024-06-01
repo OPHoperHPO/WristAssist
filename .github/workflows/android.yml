@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v4.3.3
       with:
         name: apk
-        path: ./*/*.apk
+        path: /home/runner/work/WristAssist/WristAssist/app/build/
