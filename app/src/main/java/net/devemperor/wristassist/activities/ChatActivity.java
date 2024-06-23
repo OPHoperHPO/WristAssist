@@ -274,9 +274,9 @@ public class ChatActivity extends Activity {
                 ChatCompletionResult result = service.createChatCompletion(ccr);
                 ChatMessage answer = result.getChoices().get(0).getMessage();
                 Usage usage = result.getUsage();
-                ChatItem assistantItem = new ChatItem(answer, usage.getTotalTokens());
+                ChatItem assistantItem = new ChatItem(answer, 1);
 
-                usageDatabaseHelper.edit(finalModel, usage.getTotalTokens(), Util.calcCostChat(finalModel, usage.getPromptTokens(), usage.getCompletionTokens()));
+                usageDatabaseHelper.edit(finalModel, 1, Util.calcCostChat(finalModel,1, 1));
 
                 if (Thread.interrupted()) {
                     return;
